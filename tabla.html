@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app-div-table">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <h1>Agregar nota</h1>
+                    <label for="">Nombre</label>
+                    <input type="text" name="" v-model="nombre" id="" class="form-control">
+                    <label for="">Promedio</label>
+                    <input type="number" max="20" min="10" name="" v-model="promedio" id="" class="form-control">
+                    <input type="button" value="Guardar" class="btn btn-success" v-on:click="agregarNota">
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <h1 v-if="lista.length > 0">Lista de Notas</h1>
+                    <h1 v-else="lista">No existen Notas</h1>
+                    <table class="table">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Promedio</th>
+                        </tr>
+                        <tr v-for="item in lista" v-bind:style="item.estado==false?'color:red':''">
+                            <td v-text="item.nombre"></td>
+                            <td v-text="item.promedio"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
+                    <p class="text-center">
+                        Leo te amo bb -3-
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/tabla.js"></script>
+
+</html>
